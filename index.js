@@ -6,7 +6,7 @@ require('dotenv').config()
 const cors = require('cors');
 const User  = require("./models/user");
 
-const mongodbUrl = process.env.MONGO_URI || 'mongodb+srv://Infinity:hackathon123@cluster0-irokk.mongodb.net/Library'
+const mongodbUrl = process.env.MONGO_URI || 'mongodb://localhost:27017/Library'
 mongoose.connect(mongodbUrl,
     {useNewUrlParser: true, useUnifiedTopology: true})
         .then(connect => {
