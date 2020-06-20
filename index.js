@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 require('dotenv').config()
 const cors = require('cors');
+const User  = require("./models/user");
 
 const mongodbUrl = process.env.MONGO_URI || 'mongodb+srv://Infinity:hackathon123@cluster0-irokk.mongodb.net/Library'
 mongoose.connect(mongodbUrl,
@@ -12,7 +13,7 @@ mongoose.connect(mongodbUrl,
         })
         .catch(e => console.log('could not connect to mongodb', e))
 
-        
+
 const app = express();
 
 //Middlewares
@@ -22,6 +23,13 @@ app.use(cors());
 
 //Routes
 app.use('/users', require('./routes/users'));
+
+app.get('/users', (req, res, next) => {
+    User.find()
+        .then(result => {
+            res.json(result)
+        })
+})
 
 //Start the server
 const PORT = process.env.PORT || 3000;
