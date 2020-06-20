@@ -22,9 +22,9 @@ app.use(bodyParser.json());
 app.use(cors());
 
 //Routes
-app.use('/allusers', require('./routes/users'));
+app.use('/users', require('./routes/users'));
 
-app.get('/users', (req, res, next) => {
+app.get('/allusers', (req, res, next) => {
     User.find()
         .then(result => {
             res.json(result)
