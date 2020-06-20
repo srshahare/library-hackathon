@@ -17,7 +17,7 @@ router.route('/secret')
 
     
 router.route('/check')
-    .post(usersController.check);
+    .get(usersController.check);
 
 
 
