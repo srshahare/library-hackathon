@@ -40,5 +40,9 @@ module.exports = {
 
     secret: async (req, res, next) => {
         res.json({secret: 'Authenticated user'})
-    }
+    },
+    
+    check: async (req, res, next) => {
+        res.json({secret: 'Authenticated user'})
+    },
 }

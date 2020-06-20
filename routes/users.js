@@ -15,4 +15,10 @@ router.route('/signin')
 router.route('/secret')
     .get(passport.authenticate('jwt', {session: false}), usersController.secret);
 
+    
+router.route('/check')
+    .post(usersController.check);
+
+
+
 module.exports = router;
