@@ -43,13 +43,13 @@ module.exports = {
     },
     
     check: async (req, res, next) => {
+        res.json(process.env.MONGO_URI);
 
-        User.find()
-            .then(users => {
-                res.json(users);
-            })
-            .catch(err => {
-                res.send(err)
-            })
+        // User.find()
+        //     .then(users => {
+        //     })
+        //     .catch(err => {
+        //         res.send(err)
+        //     })
     },
 }
