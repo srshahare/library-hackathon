@@ -3,8 +3,9 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-mongoose.Promise = global.Promise;
-mongoose.connect('mongodb+srv://Infinity:hackathon123@cluster0-irokk.mongodb.net/Library?retryWrites=true&w=majority',
+const mongodbUrl = process.env.MONGO_URI || 'mongodb+srv://Infinity:hackathon123@cluster0-irokk.mongodb.net/Library?retryWrites=true&w=majority'
+
+mongoose.connect(mongodbUrl,
 {useNewUrlParser: true, useUnifiedTopology: true})
 
 const app = express();
