@@ -19,6 +19,4 @@ router.route('/secret')
 router.route('/check')
     .get(usersController.check);
 
-
-
 module.exports = router;

@@ -43,13 +43,7 @@ module.exports = {
     },
     
     check: async (req, res, next) => {
-
-        User.find()
-            .then(users => {
-                res.json(users);
-            })
-            .catch(err => {
-                res.send(err)
-            })
+        const users =  await User.find();
+        res.json(users);
     },
 }
