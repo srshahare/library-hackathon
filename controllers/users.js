@@ -43,6 +43,9 @@ module.exports = {
     },
     
     check: async (req, res, next) => {
-        res.json({secret: 'Authenticated user'})
+        User.find()
+            .then(users => {
+                res.json(users);
+            })
     },
 }
