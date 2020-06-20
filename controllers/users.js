@@ -43,12 +43,13 @@ module.exports = {
     },
     
     check: async (req, res, next) => {
-        res.json({
-            title:" this is working"
-        })
-        // User.find()
-        //     .then(users => {
-        //         res.json(users);
-        //     })
+
+        User.find()
+            .then(users => {
+                res.json(users);
+            })
+            .catch(err => {
+                res.send(err)
+            })
     },
 }

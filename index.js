@@ -7,6 +7,8 @@ const mongodbUrl = process.env.MONGO_URI || 'mongodb+srv://Infinity:hackathon123
 
 mongoose.connect(mongodbUrl,
 {useNewUrlParser: true, useUnifiedTopology: true})
+    .then(connect => console.log('connected to mongodb..'))
+    .catch(e => console.log('could not connect to mongodb', e))
 
 const app = express();
 
