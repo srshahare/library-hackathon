@@ -5,13 +5,12 @@ const mongoose = require('mongoose');
 require('dotenv').config()
 const cors = require('cors');
 
-const mongodbUrl = process.env.MONGO_URI || 'mongodb+srv://Infinity:hackathon@123@cluster0-irokk.mongodb.net/Library?retryWrites=true&w=majority'
+const mongodbUrl = process.env.MONGO_URI || 'mongodb+srv://Infinity:hackathon123@cluster0-irokk.mongodb.net/Library?retryWrites=true&w=majority'
 mongoose.connect(mongodbUrl,
     {useNewUrlParser: true, useUnifiedTopology: true})
         .then(connect => {
         })
         .catch(e => console.log('could not connect to mongodb', e))
-
 
 const app = express();
 
